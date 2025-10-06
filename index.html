@@ -54,6 +54,20 @@
     h2{font-family:Playfair Display,serif;font-size:clamp(28px,3.6vw,42px);margin:0 0 16px}
     .section-intro{color:var(--muted);max-width:70ch}
 
+    .logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  filter: invert(1) brightness(2);
+  /* macht dunkle Schrift weiß auf dunklem Hintergrund */
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
     /* Services */
     .grid{display:grid;gap:18px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
@@ -123,12 +137,11 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-     <div class="logo">
+  <div class="logo">
   <img src="VISUALYNN_Logo.svg" alt="visualynn Logo" class="logo-img">
   <span>visualynn<span style="opacity:.65">· Studio</span></span>
 </div>
+
 
       <nav>
         <a href="#work">Portfolio</a>
