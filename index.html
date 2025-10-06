@@ -4,64 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>visualynn — Studio für Web · Logo · Grafik · Post</title>
-  <meta name="description" content="visualynn ist das Design‑ und Webstudio von Lynn Tepel: elegante Websites, Logos, Branding, Print, Posts & kreative Lösungen mit sauberem Code." />
+  <meta name="description" content="visualynn ist das Design- und Webstudio von Lynn Tepel: elegante Websites, Logos, Branding, Print, Posts & kreative Lösungen mit sauberem Code." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-/* Terminal / Typing Animation */
-.terminal {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: #0a0b10;
-  border: 1px solid rgba(255, 255, 255, .06);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.45);
-  overflow: hidden;
-}
-.term-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-}
-.term-header .title {
-  margin-left: auto;
-  color: var(--muted);
-  font-size: 12px;
-}
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-.term-body {
-  padding: 14px;
-  min-height: 120px;
-  white-space: pre-wrap;
-  color: #d1d5db;
-}
-.term-foot {
-  padding: 8px 12px;
-  border-top: 1px solid rgba(255,255,255,.06);
-  font-size: 12px;
-}
-.term-dim { color: var(--muted); }
-.cursor {
-  display: inline-block;
-  width: 8px;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-}
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-  
   <style>
     :root{
       --bg: #0b0c10;
@@ -146,6 +92,34 @@
       .work-grid{grid-template-columns:1fr 1fr}
       .grid.cols-3{grid-template-columns:1fr}
     }
+
+    /* Terminal / Typing Animation */
+    .terminal {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: #0a0b10;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+      overflow: hidden;
+    }
+    .term-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .term-header .title { margin-left: auto; color: var(--muted); font-size: 12px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
+    .term-body { padding: 14px; min-height: 120px; white-space: pre-wrap; color: #d1d5db; }
+    .term-foot { padding: 8px 12px; border-top: 1px solid rgba(255,255,255,.06); font-size: 12px; }
+    .term-dim { color: var(--muted); }
+    .cursor { display: inline-block; width: 8px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
   </style>
 </head>
 <body>
@@ -180,16 +154,17 @@
           <div class="stack" style="margin-bottom:10px">
             <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">Figma</span><span class="badge">LaTeX/Overleaf</span>
           </div>
-         <div class="terminal" aria-label="Visualynn Console">
-  <div class="term-header">
-    <span class="dot red" aria-hidden="true"></span>
-    <span class="dot yellow" aria-hidden="true"></span>
-    <span class="dot green" aria-hidden="true"></span>
-    <span class="title">visualynn — console</span>
-  </div>
-  <pre class="term-body"><span class="typed"></span><span class="cursor">█</span></pre>
-  <div class="term-foot term-dim">designing with logic · coding with style</div>
-</div>
+
+          <div class="terminal" aria-label="Visualynn Console">
+            <div class="term-header">
+              <span class="dot red" aria-hidden="true"></span>
+              <span class="dot yellow" aria-hidden="true"></span>
+              <span class="dot green" aria-hidden="true"></span>
+              <span class="title">visualynn — console</span>
+            </div>
+            <pre class="term-body"><span class="typed"></span><span class="cursor">█</span></pre>
+            <div class="term-foot term-dim">designing with logic · coding with style</div>
+          </div>
 
         </div>
       </div>
@@ -198,16 +173,16 @@
     <section id="services" class="sr">
       <div class="container">
         <h2>Leistungen</h2>
-        <p class="section-intro">Dein Rundum‑Paket: vom Logo über Werbung bis zur performanten Website. Klar, schnell, wartbar.</p>
+        <p class="section-intro">Dein Rundum-Paket: vom Logo über Werbung bis zur performanten Website. Klar, schnell, wartbar.</p>
         <div class="grid cols-3" style="margin-top:16px">
           <div class="card">
             <h3>Websites & UI</h3>
-            <p>Responsive Websites, Bestellformulare, Portfolio & kleine Web‑Apps. Sauberes HTML/CSS, leichtes JS, SEO‑Basics.</p>
+            <p>Responsive Websites, Bestellformulare, Portfolio & kleine Web-Apps. Sauberes HTML/CSS, leichtes JS, SEO-Basics.</p>
             <div class="stack"><span class="badge">Performance</span><span class="badge">Barrierefreiheit</span><span class="badge">SEO</span></div>
           </div>
           <div class="card">
             <h3>Logo & Branding</h3>
-            <p>Markenentwicklung mit Typo‑Feingefühl: Wortmarke, Signet, Farbwelt, Anwendungen für Digital & Print.</p>
+            <p>Markenentwicklung mit Typo-Feingefühl: Wortmarke, Signet, Farbwelt, Anwendungen für Digital & Print.</p>
             <div class="stack"><span class="badge">Styleguide</span><span class="badge">Mockups</span></div>
           </div>
           <div class="card">
@@ -222,11 +197,11 @@
     <section id="work" class="sr">
       <div class="container">
         <h2>Ausgewählte Arbeiten</h2>
-        <p class="section-intro">Ein lebendes Portfolio – mehr auf Anfrage. Platzhalter‑Visuals für den Start.</p>
+        <p class="section-intro">Ein lebendes Portfolio – mehr auf Anfrage. Platzhalter-Visuals für den Start.</p>
         <div class="work-grid" style="margin-top:16px">
           <article class="work">
             <img alt="Webdesign Screenshot" src="https://images.unsplash.com/photo-1559027615-5d327ec39e42?q=80&w=1400&auto=format&fit=crop"/>
-            <div class="cap"><span class="chip">Web</span><strong>Launch‑Site „Nebula“</strong> · schnelle Landingpage</div>
+            <div class="cap"><span class="chip">Web</span><strong>Launch-Site „Nebula“</strong> · schnelle Landingpage</div>
           </article>
           <article class="work">
             <img alt="Logo Mood" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1400&auto=format&fit=crop"/>
@@ -234,7 +209,7 @@
           </article>
           <article class="work">
             <img alt="Print Design" src="https://images.unsplash.com/photo-1513211809930-6cfa31b9a6fc?q=80&w=1400&auto=format&fit=crop"/>
-            <div class="cap"><span class="chip">Print</span><strong>Postkarten‑Set</strong> · Risographie Stil</div>
+            <div class="cap"><span class="chip">Print</span><strong>Postkarten-Set</strong> · Risographie Stil</div>
           </article>
         </div>
       </div>
@@ -244,10 +219,10 @@
       <div class="container about">
         <div>
           <h2>Über Lynn</h2>
-          <p class="section-intro">Ich bin Physikstudentin und habe während des Studiums viel mit Informatik zu tun gehabt und habe es noch, dann führte eines zum Anderen und ich habe mir viel aus Spaß und Leidenschaft selbst beigebrachtn Nun bin ich ebenfalls Designerin & Entwicklerin aus Deutschland. Mein Studio <strong>visualynn</strong> verbindet klare Ästhetik mit präziser Umsetzung. Ich liebe saubere Typografie, Micro‑Interactions und Systeme, die wachsen können.</p>
+          <p class="section-intro">Ich bin Physikstudentin und habe während des Studiums viel mit Informatik zu tun gehabt — dann führte eins zum anderen und ich habe mir viel aus Spaß und Leidenschaft selbst beigebracht. Nun bin ich Designerin & Entwicklerin aus Deutschland. Mein Studio <strong>visualynn</strong> verbindet klare Ästhetik mit präziser Umsetzung. Ich liebe saubere Typografie, Micro-Interactions und Systeme, die wachsen können.</p>
           <ul>
-            <li>Ich arbeite mit Startups, Solos & allen die meine Hilfe brauchen.</li>
-            <li>Tool‑Stack: Ich arbeite hauptsächtlich mit GitHub & Overleaf.</li>
+            <li>Ich arbeite mit Startups, Solos & allen, die meine Hilfe brauchen.</li>
+            <li>Tool-Stack: Ich arbeite hauptsächlich mit GitHub & Overleaf.</li>
             <li>Ich biete faire Preise für qualitative Arbeit.</li>
           </ul>
         </div>
@@ -262,14 +237,14 @@
           <p class="section-intro">Erzähl mir kurz von deinem Projekt. Ich melde mich schnell zurück.</p>
           <form action="mailto:hello@visualynn.de" method="post" enctype="text/plain">
             <input name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="E‑Mail" required>
+            <input type="email" name="email" placeholder="E-Mail" required>
             <textarea name="message" placeholder="Projekt, Budget, Timing …" rows="6" required></textarea>
             <button type="submit" class="btn primary">Senden</button>
           </form>
         </div>
         <div class="card">
           <h3>Direktkontakt</h3>
-          <p>E‑Mail: <a href="mailto:visualynn@web.de">visualynn@web.de</a><br>Instagram/Behance optional</p>
+          <p>E-Mail: <a href="mailto:visualynn@web.de">visualynn@web.de</a><br>Instagram/Behance optional</p>
           <p class="section-intro">Impressum & Datenschutz kannst du später als eigene Unterseiten anlegen.</p>
         </div>
       </div>
@@ -283,44 +258,8 @@
     </div>
   </footer>
 
-// Typing-Console Animation
-(function(){
-  const typed = document.querySelector('.terminal .typed');
-  const cursor = document.querySelector('.terminal .cursor');
-  if(!typed || !cursor) return;
-
-  const prefix = 'visualynn › ';
-  const lines = [
-    'create-project "visualynn-portfolio"',
-    'generate layout --elegant',
-    'add micro-interactions --a11y',
-    'deploy --https',
-    'done ✅'
-  ];
-
-  let li = 0, ci = 0;
-  typed.textContent = prefix;
-
-  function tick(){
-    if(li >= lines.length){ return; }
-    const line = lines[li];
-    if(ci < line.length){
-      typed.textContent += line.charAt(ci++);
-      setTimeout(tick, 55);
-    } else {
-      li++; ci = 0;
-      if(li < lines.length){
-        typed.textContent += '\n' + prefix;
-        setTimeout(tick, 350);
-      }
-    }
-  }
-  tick();
-})();
-
-  
   <script>
-    // IntersectionObserver (aktiviert in Hero‑Snippet)
+    // IntersectionObserver (Scroll-Reveal)
     (function(){
       const els = document.querySelectorAll('.sr');
       const io = new IntersectionObserver(entries => {
@@ -328,6 +267,41 @@
       },{ threshold: 0.12 });
       els.forEach(el => io.observe(el));
       document.getElementById('y').textContent = new Date().getFullYear();
+    })();
+
+    // Typing-Console Animation
+    (function(){
+      const typed = document.querySelector('.terminal .typed');
+      const cursor = document.querySelector('.terminal .cursor');
+      if(!typed || !cursor) return;
+
+      const prefix = 'visualynn › ';
+      const lines = [
+        'create-project "visualynn-portfolio"',
+        'generate layout --elegant',
+        'add micro-interactions --a11y',
+        'deploy --https',
+        'done ✅'
+      ];
+
+      let li = 0, ci = 0;
+      typed.textContent = prefix;
+
+      function tick(){
+        if(li >= lines.length){ return; }
+        const line = lines[li];
+        if(ci < line.length){
+          typed.textContent += line.charAt(ci++);
+          setTimeout(tick, 55);
+        } else {
+          li++; ci = 0;
+          if(li < lines.length){
+            typed.textContent += '\n' + prefix;
+            setTimeout(tick, 350);
+          }
+        }
+      }
+      tick();
     })();
   </script>
 </body>
