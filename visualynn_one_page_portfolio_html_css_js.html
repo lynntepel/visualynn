@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>visualynn — Studio für Web · Logo · Grafik · Post</title>
+  <meta name="description" content="visualynn ist das Design‑ und Webstudio von Lynn Tepel: elegante Websites, Logos, Branding, Print & kreative Lösungen mit sauberem Code." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --panel: #121319;
+      --panel-2: #0f1016;
+      --text: #e7e7ea;
+      --muted: #9aa0a6;
+      --brand: #7c8cff; /* periwinkle */
+      --accent: #8ee3f5; /* ice blue */
+      --ok: #7dffa1;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --maxw: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 800px at 80% -10%,rgba(124,140,255,.25),transparent),radial-gradient(1000px 700px at -20% 0%,rgba(142,227,245,.18),transparent),var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);padding:0 24px;margin:0 auto}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,12,16,.85),rgba(11,12,16,.65),transparent);backdrop-filter:saturate(140%) blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.6px}
+    .logo-mark{width:36px;height:36px;border-radius:50%;position:relative;box-shadow:var(--shadow);background:conic-gradient(from 210deg at 50% 50%, var(--brand), var(--accent), var(--brand));}
+    .logo-mark::after{content:"";position:absolute;inset:4px;border-radius:50%;background:radial-gradient(90px 90px at 30% 30%,rgba(255,255,255,.25),transparent),linear-gradient(180deg,var(--panel),var(--panel-2));}
+    .nav a{padding:8px 12px;border-radius:10px;color:var(--muted)}
+    .nav a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+
+    /* Hero */
+    .hero{padding:92px 0 60px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+    .kicker{display:inline-flex;gap:10px;align-items:center;padding:6px 12px;border-radius:999px;background:rgba(124,140,255,.12);color:#cfd3ff;border:1px solid rgba(124,140,255,.35);font-size:13px}
+    h1{font-family:Playfair Display,serif;font-weight:700;line-height:1.1;margin:14px 0 10px;font-size:clamp(36px,5.5vw,64px)}
+    .subtitle{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:60ch}
+    .cta-row{display:flex;gap:14px;margin-top:24px}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:var(--shadow);transition:transform .15s ease, border-color .2s ease}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22)}
+    .btn.primary{background:linear-gradient(180deg,rgba(124,140,255,.4),rgba(124,140,255,.2));border-color:rgba(124,140,255,.55)}
+
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:13px;background:#0a0b0f;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px;overflow:auto}
+    .tag{display:inline-block;font-size:12px;color:#b8ffd0;background:rgba(125,255,161,.12);border:1px solid rgba(125,255,161,.4);padding:3px 8px;border-radius:999px}
+
+    section{padding:56px 0}
+    h2{font-family:Playfair Display,serif;font-size:clamp(28px,3.6vw,42px);margin:0 0 16px}
+    .section-intro{color:var(--muted);max-width:70ch}
+
+    /* Services */
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);min-height:170px}
+    .card h3{margin:2px 0 6px;font-size:20px}
+    .badge{font-size:12px;color:#c7d2fe;background:rgba(124,140,255,.14);border:1px solid rgba(124,140,255,.36);padding:4px 8px;border-radius:999px}
+    .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+
+    /* Portfolio */
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0d0f15}
+    .work img{width:100%;height:220px;object-fit:cover;display:block;filter:saturate(1.05)}
+    .work .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));padding:18px 16px;font-size:14px}
+    .chip{display:inline-block;margin-right:8px;font-size:12px;color:#dbe6ff}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr .9fr;gap:24px}
+    .blob{aspect-ratio:1/1;border-radius:50%;background:radial-gradient(60% 60% at 30% 30%, rgba(124,140,255,.5), transparent 60%), radial-gradient(50% 50% at 70% 70%, rgba(142,227,245,.45), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr .9fr;gap:24px}
+    form{display:grid;gap:12px}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0a0b10;color:var(--text)}
+    input:focus, textarea:focus{outline:none;border-color:rgba(124,140,255,.6);box-shadow:0 0 0 4px rgba(124,140,255,.18)}
+    button[type="submit"]{cursor:pointer}
+
+    footer{padding:46px 0;color:var(--muted)}
+    .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.08);padding-top:22px}
+
+    /* Utilities */
+    .sr{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+    .sr.is-visible{opacity:1;transform:none}
+
+    @media (max-width: 960px){
+      .hero-grid, .about, .contact{grid-template-columns:1fr}
+      .work-grid{grid-template-columns:1fr 1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <span>visualynn<span style="opacity:.65">· Studio</span></span>
+      </div>
+      <nav>
+        <a href="#work">Portfolio</a>
+        <a href="#services">Leistungen</a>
+        <a href="#about">Über mich</a>
+        <a href="#contact" class="btn">Anfrage</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">Hallo, ich bin Lynn Tepel · <span class="tag">Code + Design</span></span>
+          <h1>Elegante Marken & Webseiten<br>mit Stil — und Substanz.</h1>
+          <p class="subtitle">Ich baue moderne <strong>Websites</strong>, entwickle <strong>Logos & Marken</strong> und gestalte alles von <strong>Postkarten bis Packaging</strong>. Kreativ, ästhetisch und sauber umgesetzt im Code.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn primary">Projekt anfragen</a>
+            <a href="#work" class="btn">Portfolio ansehen</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stack" style="margin-bottom:10px">
+            <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">Figma</span><span class="badge">LaTeX/Overleaf</span>
+          </div>
+          <pre class="code"><code>// micro‑interaction (IntersectionObserver)
+const els = document.querySelectorAll('.sr');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting && e.target.classList.add('is-visible'));
+},{ threshold: 0.12 });
+els.forEach(el => io.observe(el));</code></pre>
+          <p style="color:var(--muted);margin:10px 0 0">Ein kleiner Code‑Schnipsel zeigt: ich kann Design <em>und</em> Code verbinden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="sr">
+      <div class="container">
+        <h2>Leistungen</h2>
+        <p class="section-intro">Dein Rundum‑Paket: vom Logo über Brand‑Systeme bis zur performanten Website. Klar, schnell, wartbar.</p>
+        <div class="grid cols-3" style="margin-top:16px">
+          <div class="card">
+            <h3>Websites & UI</h3>
+            <p>Responsive Websites, Landing Pages, Portfolio & kleine Web‑Apps. Sauberes HTML/CSS, leichtes JS, SEO‑Basics.</p>
+            <div class="stack"><span class="badge">Performance</span><span class="badge">Barrierefreiheit</span><span class="badge">SEO</span></div>
+          </div>
+          <div class="card">
+            <h3>Logo & Branding</h3>
+            <p>Markenentwicklung mit Typo‑Feingefühl: Wortmarke, Signet, Farbwelt, Anwendungen für Digital & Print.</p>
+            <div class="stack"><span class="badge">Styleguide</span><span class="badge">Mockups</span></div>
+          </div>
+          <div class="card">
+            <h3>Print & Post</h3>
+            <p>Alles für den ersten Eindruck: Visitenkarten, Postkarten, Poster, Verpackung. Auf Wunsch mit Overleaf/LaTeX.</p>
+            <div class="stack"><span class="badge">Druckdaten</span><span class="badge">CMYK</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="sr">
+      <div class="container">
+        <h2>Ausgewählte Arbeiten</h2>
+        <p class="section-intro">Ein lebendes Portfolio – mehr auf Anfrage. Platzhalter‑Visuals für den Start.</p>
+        <div class="work-grid" style="margin-top:16px">
+          <article class="work">
+            <img alt="Webdesign Screenshot" src="https://images.unsplash.com/photo-1559027615-5d327ec39e42?q=80&w=1400&auto=format&fit=crop"/>
+            <div class="cap"><span class="chip">Web</span><strong>Launch‑Site „Nebula“</strong> · schnelle Landingpage</div>
+          </article>
+          <article class="work">
+            <img alt="Logo Mood" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1400&auto=format&fit=crop"/>
+            <div class="cap"><span class="chip">Logo</span><strong>„Linum“ Wortmarke</strong> · charaktervolle Typo</div>
+          </article>
+          <article class="work">
+            <img alt="Print Design" src="https://images.unsplash.com/photo-1513211809930-6cfa31b9a6fc?q=80&w=1400&auto=format&fit=crop"/>
+            <div class="cap"><span class="chip">Print</span><strong>Postkarten‑Set</strong> · Risographie Stil</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="sr">
+      <div class="container about">
+        <div>
+          <h2>Über Lynn</h2>
+          <p class="section-intro">Ich bin Designerin & Entwicklerin aus Deutschland. Mein Studio <strong>visualynn</strong> verbindet klare Ästhetik mit präziser Umsetzung. Ich liebe saubere Typografie, Micro‑Interactions und Systeme, die wachsen können.</p>
+          <ul>
+            <li>Arbeite mit Startups, Solos & Kultur.</li>
+            <li>Tool‑Stack: Figma, VS Code, GitHub, Overleaf.</li>
+            <li>Arbeite remote – Meetings auf Deutsch & Englisch.</li>
+          </ul>
+        </div>
+        <div class="blob" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="sr">
+      <div class="container contact">
+        <div>
+          <h2>Projekt starten</h2>
+          <p class="section-intro">Erzähl mir kurz von deinem Projekt. Ich melde mich schnell zurück.</p>
+          <form action="mailto:hello@visualynn.de" method="post" enctype="text/plain">
+            <input name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="E‑Mail" required>
+            <textarea name="message" placeholder="Projekt, Budget, Timing …" rows="6" required></textarea>
+            <button type="submit" class="btn primary">Senden</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Direktkontakt</h3>
+          <p>E‑Mail: <a href="mailto:hello@visualynn.de">hello@visualynn.de</a><br>GitHub: <a href="https://github.com/" target="_blank" rel="noreferrer noopener">github.com/visualynn</a><br>Instagram/Behance optional</p>
+          <p class="section-intro">Impressum & Datenschutz kannst du später als eigene Unterseiten anlegen.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> visualynn — Lynn Tepel</small>
+      <small>Made with ♥︎, Code & Kaffee</small>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver (aktiviert in Hero‑Snippet)
+    (function(){
+      const els = document.querySelectorAll('.sr');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => e.isIntersecting && e.target.classList.add('is-visible'));
+      },{ threshold: 0.12 });
+      els.forEach(el => io.observe(el));
+      document.getElementById('y').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
