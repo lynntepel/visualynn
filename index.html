@@ -7,6 +7,61 @@
   <meta name="description" content="visualynn ist das Design‑ und Webstudio von Lynn Tepel: elegante Websites, Logos, Branding, Print, Posts & kreative Lösungen mit sauberem Code." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+/* Terminal / Typing Animation */
+.terminal {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: #0a0b10;
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+  overflow: hidden;
+}
+.term-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+}
+.term-header .title {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+.term-body {
+  padding: 14px;
+  min-height: 120px;
+  white-space: pre-wrap;
+  color: #d1d5db;
+}
+.term-foot {
+  padding: 8px 12px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  font-size: 12px;
+}
+.term-dim { color: var(--muted); }
+.cursor {
+  display: inline-block;
+  width: 8px;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+  
   <style>
     :root{
       --bg: #0b0c10;
@@ -228,6 +283,42 @@
     </div>
   </footer>
 
+// Typing-Console Animation
+(function(){
+  const typed = document.querySelector('.terminal .typed');
+  const cursor = document.querySelector('.terminal .cursor');
+  if(!typed || !cursor) return;
+
+  const prefix = 'visualynn › ';
+  const lines = [
+    'create-project "visualynn-portfolio"',
+    'generate layout --elegant',
+    'add micro-interactions --a11y',
+    'deploy --https',
+    'done ✅'
+  ];
+
+  let li = 0, ci = 0;
+  typed.textContent = prefix;
+
+  function tick(){
+    if(li >= lines.length){ return; }
+    const line = lines[li];
+    if(ci < line.length){
+      typed.textContent += line.charAt(ci++);
+      setTimeout(tick, 55);
+    } else {
+      li++; ci = 0;
+      if(li < lines.length){
+        typed.textContent += '\n' + prefix;
+        setTimeout(tick, 350);
+      }
+    }
+  }
+  tick();
+})();
+
+  
   <script>
     // IntersectionObserver (aktiviert in Hero‑Snippet)
     (function(){
