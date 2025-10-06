@@ -125,13 +125,17 @@
           <div class="stack" style="margin-bottom:10px">
             <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">Figma</span><span class="badge">LaTeX/Overleaf</span>
           </div>
-          <pre class="code"><code>// micro‑interaction (IntersectionObserver)
-const els = document.querySelectorAll('.sr');
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => e.isIntersecting && e.target.classList.add('is-visible'));
-},{ threshold: 0.12 });
-els.forEach(el => io.observe(el));</code></pre>
-          <p style="color:var(--muted);margin:10px 0 0">Ein kleiner Code‑Schnipsel zeigt: ich kann Design <em>und</em> Code verbinden.</p>
+         <div class="terminal" aria-label="Visualynn Console">
+  <div class="term-header">
+    <span class="dot red" aria-hidden="true"></span>
+    <span class="dot yellow" aria-hidden="true"></span>
+    <span class="dot green" aria-hidden="true"></span>
+    <span class="title">visualynn — console</span>
+  </div>
+  <pre class="term-body"><span class="typed"></span><span class="cursor">█</span></pre>
+  <div class="term-foot term-dim">designing with logic · coding with style</div>
+</div>
+
         </div>
       </div>
     </section>
