@@ -225,49 +225,49 @@
     </div>
   </footer>
 
-  <script>
-    // IntersectionObserver (aktiviert in Hero‑Snippet)
-    (function(){
-      const els = document.querySelectorAll('.sr');
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => e.isIntersecting && e.target.classList.add('is-visible'));
-      },{ threshold: 0.12 });
-      els.forEach(el => io.observe(el));
-      document.getElementById('y').textContent = new Date().getFullYear();
+ <script>
+  // IntersectionObserver (aktiviert in Hero-Snippet)
+  (function(){
+    const els = document.querySelectorAll('.sr');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting && e.target.classList.add('is-visible'));
+    },{ threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-      // Typing-Console
-      (function(){
-        const typed = document.querySelector('.terminal .typed');
-        const cursor = document.querySelector('.terminal .cursor');
-        if(!typed || !cursor) return;
-        const prefix = 'visualynn › ';
-        const lines = [
-          'create-project "visualynn-portfolio"',
-          'generate layout --elegant',
-          'add micro-interactions --a11y',
-          'deploy --https',
-          'done ✅'
-        ];
-        let li = 0, ci = 0;
-        typed.textContent = prefix;
-        function tick(){
-          if(li >= lines.length){ return; }
-          const line = lines[li];
-          if(ci < line.length){
-            typed.textContent += line.charAt(ci++);
-            setTimeout(tick, 55);
-          } else {
-            li++; ci = 0;
-            if(li < lines.length){
-              typed.textContent += '
-' + prefix;
-              setTimeout(tick, 350);
-            }
+    // Typing-Console
+    (function(){
+      const typed = document.querySelector('.terminal .typed');
+      const cursor = document.querySelector('.terminal .cursor');
+      if(!typed || !cursor) return;
+      const prefix = 'visualynn › ';
+      const lines = [
+        'create-project "visualynn-portfolio"',
+        'generate layout --elegant',
+        'add micro-interactions --a11y',
+        'deploy --https',
+        'done ✅'
+      ];
+      let li = 0, ci = 0;
+      typed.textContent = prefix;
+      function tick(){
+        if(li >= lines.length){ return; }
+        const line = lines[li];
+        if(ci < line.length){
+          typed.textContent += line.charAt(ci++);
+          setTimeout(tick, 55);
+        } else {
+          li++; ci = 0;
+          if(li < lines.length){
+            typed.textContent += '\n' + prefix;
+            setTimeout(tick, 350);
           }
         }
-        tick();
-      })();
+      }
+      tick();
     })();
-  </script>
+  })();
+</script>
+
 </body>
 </html>
