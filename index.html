@@ -259,8 +259,8 @@
       const typed = document.querySelector('.terminal .typed');
       const cursor = document.querySelector('.terminal .cursor');
       if(!typed || !cursor) return;
-      const prefix = 'visualynn › ';
-       const lines = [
+    const prefix = 'visualynn › ';
+const lines = [
   'compile design.tex',
   'if (add.coffee && add.heart && add.code === true) {',
   '    System.out.println("creativity + precision");',
@@ -268,23 +268,25 @@
   '    throw new Error("need more coffee ☕");',
   '}'
 ];
-      let li = 0, ci = 0;
-      typed.textContent = prefix;
-      function tick(){
-        if(li >= lines.length){ return; }
-        const line = lines[li];
-        if(ci < line.length){
-          typed.textContent += line.charAt(ci++);
-          setTimeout(tick, 55);
-        } else {
-          li++; ci = 0;
-          if(li < lines.length){
-            typed.textContent += '\n' + prefix;
-            setTimeout(tick, 350);
-          }
-        }
-      }
-      tick();
+
+let li = 0, ci = 0;
+typed.textContent = prefix; // Prefix nur einmal ganz am Anfang
+
+function tick(){
+  if(li >= lines.length){ return; }
+  const line = lines[li];
+  if(ci < line.length){
+    typed.textContent += line.charAt(ci++);
+    setTimeout(tick, 55);
+  } else {
+    li++; ci = 0;
+    // nur neue Zeile, aber kein neuer Prefix
+    typed.textContent += '\n';
+    setTimeout(tick, 350);
+  }
+}
+tick();
+
     })();
   })();
 </script>
