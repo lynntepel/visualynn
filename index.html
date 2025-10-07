@@ -270,22 +270,33 @@ const lines = [
 ];
 
 let li = 0, ci = 0;
-typed.textContent = prefix; // Prefix nur einmal ganz am Anfang
+typed.textContent = ''; // wir bauen dynamisch Zeile für Zeile
 
 function tick(){
   if(li >= lines.length){ return; }
   const line = lines[li];
+  
+  // Prefix nur bei den "Top-Level"-Zeilen
+  const needsPrefix = (
+    line.startsWith('compile') ||
+    line.startsWith('if')
+  );
+
+  if(ci === 0 && needsPrefix) {
+    typed.textContent += prefix;
+  }
+
   if(ci < line.length){
     typed.textContent += line.charAt(ci++);
     setTimeout(tick, 55);
   } else {
     li++; ci = 0;
-    // nur neue Zeile, aber kein neuer Prefix
     typed.textContent += '\n';
     setTimeout(tick, 350);
   }
 }
 tick();
+
 
     })();
   })();
