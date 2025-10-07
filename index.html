@@ -260,13 +260,11 @@
       const cursor = document.querySelector('.terminal .cursor');
       if(!typed || !cursor) return;
       const prefix = 'visualynn › ';
-      const lines = [
-        'create-project "visualynn-portfolio"',
-        'generate layout --elegant',
-        'add micro-interactions --a11y',
-        'deploy --https',
-        'done ✅'
-      ];
+       const lines = [
+  'compile design.tex',
+  'if (add.coffee && add.heart && add.code == 1)',
+  'done, made with ♥, code and ☕'
+    ];
       let li = 0, ci = 0;
       typed.textContent = prefix;
       function tick(){
