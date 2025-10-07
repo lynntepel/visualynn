@@ -41,6 +41,20 @@
     h1{font-family:Playfair Display,serif;font-weight:700;line-height:1.1;margin:14px 0 10px;font-size:clamp(36px,5.5vw,64px)}
     .subtitle{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:60ch}
     .cta-row{display:flex;gap:14px;margin-top:24px}
+    /* Hero single-button variant */
+.cta-row.single {
+  justify-content: flex-start;   /* Linksbündig */
+  margin-top: 36px;              /* etwas mehr Abstand */
+}
+@media (max-width: 640px) {
+  .cta-row.single {
+    justify-content: center;     /* zentriert auf Mobilgeräten */
+  }
+  .cta-row.single .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
     .btn{display:inline-flex;gap:10px;align-items:center;padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:var(--shadow);transition:transform .15s ease, border-color .2s ease}
     .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22)}
     .btn.primary{background:linear-gradient(180deg,rgba(124,140,255,.4),rgba(124,140,255,.2));border-color:rgba(124,140,255,.55)}
