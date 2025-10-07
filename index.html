@@ -262,9 +262,12 @@
       const prefix = 'visualynn › ';
        const lines = [
   'compile design.tex',
-  'if (add.coffee && add.heart && add.code == true)',
-  'done, made with ♥, code and ☕'
-    ];
+  'if (add.coffee && add.heart && add.code === true) {',
+  '    render("creativity + precision");',
+  '} else {',
+  '    throw new Error("need more coffee ☕");',
+  '}'
+];
       let li = 0, ci = 0;
       typed.textContent = prefix;
       function tick(){
